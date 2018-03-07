@@ -1,0 +1,235 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>发布试玩</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="css/global.css" media="all">
+		<link rel="stylesheet" href="css/addgame.css" media="all">
+	</head>
+
+	<body>
+		<div style="margin: 15px;">
+			<div class="layui-form-item">
+				<div class="layui-elem-quote">
+					<a href="ReleaseDemo.html">发布试玩</a>>添加试玩
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">试玩名称</label>
+				<div class="layui-input-inline">
+					<input type="text" name="gamename" lay-verify="gamename" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">试玩类型</label>
+				<select name="demotype">
+					<option value="全部" selected="selected">全部</option>
+					<option value="页游" >招募玩家</option>
+					<option value="端游">其他</option>
+				</select>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">游戏类型</label>
+				<select name="gametype">
+					<option value="全部" selected="selected">全部</option>
+					<option value="页游" >页游</option>
+					<option value="端游">端游</option>
+					<option value="棋牌">棋牌</option>
+					<option value="手游">手游</option>
+				</select>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">注册地址</label>
+				<select name="adress">
+					<option value="全部" selected="selected">全部</option>
+					<option value="页游" >页游</option>
+					<option value="端游">端游</option>
+					<option value="手游">手游</option>
+				</select>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">试玩周期</label>
+				<div class="layui-inline">
+			        <div class="layui-input-inline">
+			        	<input type="text" class="layui-input" id="starttime" placeholder="yyyy-MM-dd">
+			        </div>
+			    </div>
+			    <div class="layui-inline">
+			        <div class="layui-input-inline">
+			        	<input type="text" class="layui-input" id="endtime" placeholder="yyyy-MM-dd">
+			        </div>
+			    </div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">试玩范围</label>
+				<div class="layui-input-inline">
+					<input type="text" name="demorange" lay-verify="demorange" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">更新时间</label>
+				<div class="layui-input-inline">
+					<input type="text" name="changetime" lay-verify="changetime" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">金币领取</label>
+				<div class="layui-input-inline">
+					<input type="text" name="gold" lay-verify="gold" autocomplete="off" class="layui-input" placeholder="请在试玩周期内自行领取奖励，逾期是否作废？" style="width:330px">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">温馨提示</label>
+				<div class="layui-input-inline">
+					<textarea name="warmprompt" class="warmprompt" placeholder="严禁重复体验，同一IP、同一电脑体验的取最高等级进行奖励。"></textarea>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">封面图</label>
+				<button type="button" class="layui-btn" id="surface">
+				    <i class="layui-icon">&#xe67c;</i>上传图片
+				</button>
+				<div class="layui-upload-list">
+				    <img class="layui-upload-img" id="surfaceImg">
+				    <p id="demoText"></p>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">背景图</label>
+				<button type="button" class="layui-btn" id="background">
+				    <i class="layui-icon">&#xe67c;</i>上传图片
+				</button>
+				<div class="layui-upload-list">
+				    <img class="layui-upload-img" id="backgroundImg">
+				    <p id="demoText"></p>
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">推荐封面</label>
+				<button type="button" class="layui-btn" id="recommend">
+				    <i class="layui-icon">&#xe67c;</i>上传图片
+				</button>
+				<div class="layui-upload-list">
+				    <img class="layui-upload-img" id="recommendImg">
+				    <p id="demoText"></p>
+				</div>
+			</div>
+			<div class="add_award_cont">
+				<blockquote class="layui-elem-quote layui-quote-nm">
+					<div class="layui-form-item">
+						<label class="layui-form-label">大标题</label>
+						<div class="layui-input-inline">
+							<input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+						</div>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label"></label>
+						<div class="layui-input-inline">
+							<input type="text" name="awardConditions" lay-verify="awardConditions" autocomplete="off" class="layui-input" placeholder="奖励条件">
+						</div>
+						<div class="layui-input-inline">
+							<input type="text" name="awardCoin" lay-verify="awardCoin" autocomplete="off" class="layui-input" placeholder="奖励金币">
+						</div>
+						<button class="layui-btn layui-btn-danger del_msg_btn">删除</button>
+					</div>
+					<div class="layui-form-item">
+						<label class="layui-form-label"></label>
+						<button class="layui-btn layui-btn-warm add_msg_btn">添加</button>
+					</div>
+					<div class="del_award_btn">
+						<i class="layui-icon">&#x1006;</i>
+					</div>
+				</blockquote>
+				<div class="layui-form-item">
+					<label class="layui-form-label"></label>
+					<button class="layui-btn layui-btn-normal add_award_btn">添加奖励信息</button>
+				</div>
+			</div>
+			<div class="layui-form-item" style="width:200px;margin:0 auto;">
+				<div class="layui-input-inline">
+					<button class="layui-btn">确认</button>
+					<a href="ReleaseDemo.html" class="layui-btn layui-btn-warm">返回</a>
+				</div>
+			</div>
+		</div>
+	<script type="text/javascript" src="plugins/layui/laydate/laydate.js"></script>
+	<script type="text/javascript" src="plugins/layui/layui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script>
+		laydate.render({
+			elem: '#starttime'
+			,type: 'datetime'
+		});
+		laydate.render({
+			elem: '#endtime'
+			,type: 'datetime'
+		});
+		layui.use('upload', function(){
+		    var upload = layui.upload;
+		   
+		  //执行实例
+		    var uploadInst = upload.render({
+			    elem: '#surface' //绑定元素
+			    ,url: '/upload/' //上传接口
+			    ,done: function(res){
+			      //上传完毕回调
+			    }
+			    ,error: function(){
+			      //请求异常回调
+			    }
+		   });
+		});
+		layui.use('upload', function(){
+		    var upload = layui.upload;
+		   
+		  //执行实例
+		    var uploadInst = upload.render({
+			    elem: '#background' //绑定元素
+			    ,url: '/upload/' //上传接口
+			    ,done: function(res){
+			      //上传完毕回调
+			    }
+			    ,error: function(){
+			      //请求异常回调
+			    }
+		   });
+		});
+		layui.use('upload', function(){
+		    var upload = layui.upload;
+		   
+		  //执行实例
+		    var uploadInst = upload.render({
+			    elem: '#recommend' //绑定元素
+			    ,url: '/upload/' //上传接口
+			    ,done: function(res){
+			      //上传完毕回调
+			    }
+			    ,error: function(){
+			      //请求异常回调
+			    }
+		   });
+		});
+		$('.add_award_cont').on('click','.del_msg_btn',function(){
+			$(this).parents('.layui-form-item').remove();
+		})
+		var addmsg = '<div class="layui-form-item"><label class="layui-form-label"></label><div class="layui-input-inline"><input type="text" name="awardConditions" lay-verify="awardConditions" autocomplete="off" class="layui-input" placeholder="奖励条件"></div><div class="layui-input-inline"><input type="text" name="awardCoin" lay-verify="awardCoin" autocomplete="off" class="layui-input" placeholder="奖励金币"></div><button class="layui-btn layui-btn-danger del_msg_btn">删除</button></div>';
+		$('.add_award_cont').on('click','.add_msg_btn',function(){
+			$(this).parents('.layui-form-item').before(addmsg);
+		})
+		var addaward = '<blockquote class="layui-elem-quote layui-quote-nm"><div class="layui-form-item"><label class="layui-form-label">大标题</label><div class="layui-input-inline"><input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input"></div></div><div class="layui-form-item"><label class="layui-form-label"></label><div class="layui-input-inline"><input type="text" name="awardConditions" lay-verify="awardConditions" autocomplete="off" class="layui-input" placeholder="奖励条件"></div><div class="layui-input-inline"><input type="text" name="awardCoin" lay-verify="awardCoin" autocomplete="off" class="layui-input" placeholder="奖励金币"></div><button class="layui-btn layui-btn-danger del_msg_btn">删除</button></div><div class="layui-form-item"><label class="layui-form-label"></label><button class="layui-btn layui-btn-warm add_msg_btn">添加</button></div><div class="del_award_btn"><i class="layui-icon">&#x1006;</i></div></blockquote>';
+		$('.add_award_btn').click(function(){
+			$(this).parents('.layui-form-item').before(addaward);
+		})
+		$('.add_award_cont').on('click','.del_award_btn',function(){
+			$(this).parents('blockquote').remove();
+		})
+		
+	</script>
+	</body>
+
+</html>

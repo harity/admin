@@ -1,0 +1,54 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>提现管理</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="css/global.css" media="all">
+	</head>
+
+	<body>
+		<div style="margin: 15px;">
+			<div>
+				<div class="layui-form-item">
+					<label class="layui-form-label">用户名：</label>
+					<div class="layui-input-inline">
+						<input type="text" name="email" lay-verify="email" autocomplete="off" class="layui-input">
+					</div>
+					<label class="layui-form-label">审核状态：</label>
+					<select name="quiz1" style="height: 38px;line-height: 38px;border: 1px solid #e6e6e6;background-color: #fff;border-radius: 2px;">
+						<option value="全部">全部</option>
+						<option value="待审核" selected="selected">待审核</option>
+						<option value="已通过">已通过</option>
+						<option value="未通过">未通过</option>
+					</select>
+					<button class="layui-btn">搜素</button>
+				</div>
+				<table class="layui-table">
+					  <thead>
+					    <tr>
+					      <th>提现日期</th>
+					      <th>ID</th>
+					      <th>昵称</th>
+					      <th>微信号</th>
+					      <th>提现金额</th>
+					      <th>备注</th>
+					      <th>操作</th>
+					    </tr> 
+					  </thead>
+					  <tbody>
+					    
+					  </tbody>
+					</table>
+			</div>
+		</div>
+		
+	<script type="text/javascript" src="plugins/layui/layui.js"></script>
+	
+	</body>
+
+</html>

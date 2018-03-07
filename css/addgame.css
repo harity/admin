@@ -1,0 +1,38 @@
+.layui-form-item select{
+	width:190px;
+	height: 38px;
+	line-height: 38px;
+	border: 1px solid #e6e6e6;
+	background-color: #fff;
+	border-radius: 2px;
+}
+.add_award_cont blockquote{
+	position: relative;
+}
+.del_award_btn{
+	position: absolute;
+	width:20px;
+	height:20px;
+	color:red;
+	top:20px;
+	right:20px;
+	cursor:pointer;
+}
+.del_award_btn i{
+	font-size: 30px;
+	font-weight: bold;
+}
+.warmprompt{
+	width:500px;
+	min-height: 38px;
+	line-height: 38px;
+	border-color: #e6e6e6;
+	border-width: 1px;
+    border-style: solid;
+    background-color: #fff;
+    border-radius: 2px;
+    padding-left:10px;
+}
+.warmprompt:focus{
+	border-color: #C9C9C9!important;
+}
