@@ -49,5 +49,9 @@ var navs = [{
 		"title": "专链管理",
 		"icon": "&#xe64c;",
 		"href": "Link.html"
+	},{
+		"title": "图片推荐",
+		"icon": "&#xe60d;",
+		"href": "FeaturedImg.html"
 	}]
 }];

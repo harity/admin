@@ -11,7 +11,17 @@
 		<link rel="stylesheet" href="css/global.css" media="all">
 		<link rel="stylesheet" href="css/addgame.css" media="all">
 	</head>
-
+	<style>
+		input.layui-input,.layui-form-item select{
+			width:500px;
+		}
+		.layui-input.reward{
+			width:390px;
+		}
+		.layui-input-inline.reward{
+			width:390px;
+		}
+	</style>
 	<body>
 		<div style="margin: 15px;">
 			<div class="layui-form-item">
@@ -22,16 +32,8 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">试玩名称</label>
 				<div class="layui-input-inline">
-					<input type="text" name="gamename" lay-verify="gamename" autocomplete="off" class="layui-input">
+					<input type="text" name="gamename" lay-verify="gamename" autocomplete="off" class="layui-input" placeholder="运营商《游戏名称》试玩标题">
 				</div>
-			</div>
-			<div class="layui-form-item">
-				<label class="layui-form-label">试玩类型</label>
-				<select name="demotype">
-					<option value="全部" selected="selected">全部</option>
-					<option value="页游" >招募玩家</option>
-					<option value="端游">其他</option>
-				</select>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">游戏类型</label>
@@ -40,29 +42,24 @@
 					<option value="页游" >页游</option>
 					<option value="端游">端游</option>
 					<option value="棋牌">棋牌</option>
-					<option value="手游">手游</option>
+					<option value="手游">手游H5</option>
+					<option value="手游">金融理财</option>
+					<option value="手游">其他</option>
 				</select>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">注册地址</label>
-				<select name="adress">
-					<option value="全部" selected="selected">全部</option>
-					<option value="页游" >页游</option>
-					<option value="端游">端游</option>
-					<option value="手游">手游</option>
-				</select>
+				<div class="layui-input-inline">
+					<input type="text" name="adress" lay-verify="adress" autocomplete="off" class="layui-input">
+				</div>
 			</div>
 			<div class="layui-form-item">
 				<label class="layui-form-label">试玩周期</label>
 				<div class="layui-inline">
-			        <div class="layui-input-inline">
-			        	<input type="text" class="layui-input" id="starttime" placeholder="yyyy-MM-dd">
-			        </div>
+			        <input type="text" class="layui-input" id="starttime" placeholder="yyyy-MM-dd" style="width:243px;">
 			    </div>
 			    <div class="layui-inline">
-			        <div class="layui-input-inline">
-			        	<input type="text" class="layui-input" id="endtime" placeholder="yyyy-MM-dd">
-			        </div>
+			        <input type="text" class="layui-input" id="endtime" placeholder="yyyy-MM-dd" style="width:243px;">
 			    </div>
 			</div>
 			<div class="layui-form-item">
@@ -80,7 +77,7 @@
 			<div class="layui-form-item">
 				<label class="layui-form-label">金币领取</label>
 				<div class="layui-input-inline">
-					<input type="text" name="gold" lay-verify="gold" autocomplete="off" class="layui-input" placeholder="请在试玩周期内自行领取奖励，逾期是否作废？" style="width:330px">
+					<input type="text" name="gold" lay-verify="gold" autocomplete="off" class="layui-input" placeholder="请在试玩周期内自行领取奖励，逾期是否作废？" >
 				</div>
 			</div>
 			<div class="layui-form-item">
@@ -124,13 +121,13 @@
 					<div class="layui-form-item">
 						<label class="layui-form-label">大标题</label>
 						<div class="layui-input-inline">
-							<input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input">
+							<input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input title_input">
 						</div>
 					</div>
 					<div class="layui-form-item">
 						<label class="layui-form-label"></label>
-						<div class="layui-input-inline">
-							<input type="text" name="awardConditions" lay-verify="awardConditions" autocomplete="off" class="layui-input" placeholder="奖励条件">
+						<div class="layui-input-inline reward">
+							<input type="text" name="awardConditions" lay-verify="awardConditions" autocomplete="off" class="layui-input reward" placeholder="奖励条件">
 						</div>
 						<div class="layui-input-inline">
 							<input type="text" name="awardCoin" lay-verify="awardCoin" autocomplete="off" class="layui-input" placeholder="奖励金币">
@@ -217,11 +214,11 @@
 		$('.add_award_cont').on('click','.del_msg_btn',function(){
 			$(this).parents('.layui-form-item').remove();
 		})
-		var addmsg = '<div class="layui-form-item"><label class="layui-form-label"></label><div class="layui-input-inline"><input type="text" name="awardConditions" lay-verify="awardConditions" autocomplete="off" class="layui-input" placeholder="奖励条件"></div><div class="layui-input-inline"><input type="text" name="awardCoin" lay-verify="awardCoin" autocomplete="off" class="layui-input" placeholder="奖励金币"></div><button class="layui-btn layui-btn-danger del_msg_btn">删除</button></div>';
+		var addmsg = '<div class="layui-form-item"><label class="layui-form-label"></label><div class="layui-input-inline reward"><input type="text" name="awardConditions" lay-verify="awardConditions" autocomplete="off" class="layui-input reward" placeholder="奖励条件"></div><div class="layui-input-inline"><input type="text" name="awardCoin" lay-verify="awardCoin" autocomplete="off" class="layui-input" placeholder="奖励金币"></div><button class="layui-btn layui-btn-danger del_msg_btn">删除</button></div>';
 		$('.add_award_cont').on('click','.add_msg_btn',function(){
 			$(this).parents('.layui-form-item').before(addmsg);
 		})
-		var addaward = '<blockquote class="layui-elem-quote layui-quote-nm"><div class="layui-form-item"><label class="layui-form-label">大标题</label><div class="layui-input-inline"><input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input"></div></div><div class="layui-form-item"><label class="layui-form-label"></label><div class="layui-input-inline"><input type="text" name="awardConditions" lay-verify="awardConditions" autocomplete="off" class="layui-input" placeholder="奖励条件"></div><div class="layui-input-inline"><input type="text" name="awardCoin" lay-verify="awardCoin" autocomplete="off" class="layui-input" placeholder="奖励金币"></div><button class="layui-btn layui-btn-danger del_msg_btn">删除</button></div><div class="layui-form-item"><label class="layui-form-label"></label><button class="layui-btn layui-btn-warm add_msg_btn">添加</button></div><div class="del_award_btn"><i class="layui-icon">&#x1006;</i></div></blockquote>';
+		var addaward = '<blockquote class="layui-elem-quote layui-quote-nm"><div class="layui-form-item"><label class="layui-form-label">大标题</label><div class="layui-input-inline"><input type="text" name="title" lay-verify="title" autocomplete="off" class="layui-input title_input"></div></div><div class="layui-form-item"><label class="layui-form-label"></label><div class="layui-input-inline reward"><input type="text" name="awardConditions" lay-verify="awardConditions" autocomplete="off" class="layui-input reward" placeholder="奖励条件"></div><div class="layui-input-inline"><input type="text" name="awardCoin" lay-verify="awardCoin" autocomplete="off" class="layui-input" placeholder="奖励金币"></div><button class="layui-btn layui-btn-danger del_msg_btn">删除</button></div><div class="layui-form-item"><label class="layui-form-label"></label><button class="layui-btn layui-btn-warm add_msg_btn">添加</button></div><div class="del_award_btn"><i class="layui-icon">&#x1006;</i></div></blockquote>';
 		$('.add_award_btn').click(function(){
 			$(this).parents('.layui-form-item').before(addaward);
 		})

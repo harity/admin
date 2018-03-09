@@ -9,6 +9,12 @@
 .add_award_cont blockquote{
 	position: relative;
 }
+.add_award_cont blockquote input{
+	width: 190px;
+}
+.add_award_cont blockquote input.title_input{
+	width: 390px;
+}
 .del_award_btn{
 	position: absolute;
 	width:20px;
@@ -23,7 +29,7 @@
 	font-weight: bold;
 }
 .warmprompt{
-	width:500px;
+	width:490px;
 	min-height: 38px;
 	line-height: 38px;
 	border-color: #e6e6e6;
@@ -35,4 +41,7 @@
 }
 .warmprompt:focus{
 	border-color: #C9C9C9!important;
+}
+input.reward{
+	width:500px;
 }

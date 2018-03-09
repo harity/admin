@@ -1,0 +1,86 @@
+<!doctype html>
+<html>
+
+	<head>
+		<meta charset="utf-8">
+		<title>添加图片</title>
+		<meta name="renderer" content="webkit">
+		<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+		<meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1">
+		<link rel="stylesheet" href="plugins/layui/css/layui.css" media="all" />
+		<link rel="stylesheet" href="css/global.css" media="all">
+		<link rel="stylesheet" href="css/addgame.css" media="all">
+	</head>
+	<style>
+		input.layui-input,.layui-form-item select{
+			width:500px;
+		}
+	</style>
+	<body>
+		<div style="margin: 15px;">
+			<div class="layui-form-item">
+				<div class="layui-elem-quote">
+					<a href="FeaturedImg.html">图片推荐</a>>添加图片
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">标题名称</label>
+				<div class="layui-input-inline">
+					<input type="text" name="imgname" lay-verify="imgname" autocomplete="off" class="layui-input" placeholder="">
+				</div>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">类型</label>
+				<select name="imgtype">
+					<option value="首页banner" selected="selected">首页banner</option>
+					<option value="试玩banner" >试玩banner</option>
+				</select>
+			</div>
+			<div class="layui-form-item">
+				<label class="layui-form-label">链接</label>
+				<div class="layui-input-inline">
+					<input type="text" name="imglink" lay-verify="imglink" autocomplete="off" class="layui-input">
+				</div>
+			</div>
+			
+			<div class="layui-form-item">
+				<label class="layui-form-label">封面图</label>
+				<button type="button" class="layui-btn" id="surface">
+				    <i class="layui-icon">&#xe67c;</i>上传图片
+				</button>
+				<div class="layui-upload-list">
+				    <img class="layui-upload-img" id="surfaceImg">
+				    <p id="demoText"></p>
+				</div>
+			</div>
+			<div class="layui-form-item" style="width:200px;margin:0 auto;">
+				<div class="layui-input-inline">
+					<button class="layui-btn">确认</button>
+					<a href="FeaturedImg.html" class="layui-btn layui-btn-warm">返回</a>
+				</div>
+			</div>
+		</div>
+	<script type="text/javascript" src="plugins/layui/laydate/laydate.js"></script>
+	<script type="text/javascript" src="plugins/layui/layui.js"></script>
+	<script type="text/javascript" src="js/jquery-1.11.1.min.js"></script>
+	<script>
+		
+		layui.use('upload', function(){
+		    var upload = layui.upload;
+		   
+		  //执行实例
+		    var uploadInst = upload.render({
+			    elem: '#surface' //绑定元素
+			    ,url: '/upload/' //上传接口
+			    ,done: function(res){
+			      //上传完毕回调
+			    }
+			    ,error: function(){
+			      //请求异常回调
+			    }
+		   });
+		});
+	</script>
+	</body>
+
+</html>
